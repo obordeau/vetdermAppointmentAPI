@@ -74,6 +74,3 @@ def first_appointment():
     }
     
     return jsonify(result)
-
-if __name__ == "__main__":
-    app.run()
