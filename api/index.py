@@ -46,7 +46,7 @@ def getFirst(x):
             return item
     return False
 
-@app.route("/first_appointment")
+@app.route("/")
 def first_appointment():
     paramsPost = {
     "api_key": "tGa-zibffSpW",
