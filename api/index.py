@@ -48,29 +48,34 @@ def getFirst(x):
 
 @app.route("/")
 def first_appointment():
-    paramsPost = {
-    "api_key": "tGa-zibffSpW",
-    }
-    r = requests.post("https://www.parsehub.com/api/v2/projects/ty4Pdcv2K3hO/run", data=paramsPost)
+    # paramsPost = {
+    # "api_key": "tGa-zibffSpW",
+    # }
+    # r = requests.post("https://www.parsehub.com/api/v2/projects/ty4Pdcv2K3hO/run", data=paramsPost)
 
-    paramsGet = {
-    "api_key": "tGa-zibffSpW",
-    "format": "json"
-    }
-    r = requests.get('https://www.parsehub.com/api/v2/projects/ty4Pdcv2K3hO/last_ready_run/data', params=paramsGet)
+    # paramsGet = {
+    # "api_key": "tGa-zibffSpW",
+    # "format": "json"
+    # }
+    # r = requests.get('https://www.parsehub.com/api/v2/projects/ty4Pdcv2K3hO/last_ready_run/data', params=paramsGet)
     
-    r =  r.json()
-    r = getFirst(r["buttons"])
+    # r =  r.json()
+    # r = getFirst(r["buttons"])
     
-    if not(r):
-        return ""
+    # if not(r):
+    #     return ""
 
-    litteralDay,date = r["date"].split(", ")
-    day,month,year = date.split("-")
+    # litteralDay,date = r["date"].split(", ")
+    # day,month,year = date.split("-")
+    
+    # result = {
+    #     "date" : addFirstWord(day,month,year) + litteralDay + " " + day + " " + numberToMonth(month),
+    #     "time" : r["time"].replace(":", "h")
+    # }
     
     result = {
-        "date" : addFirstWord(day,month,year) + litteralDay + " " + day + " " + numberToMonth(month),
-        "time" : r["time"].replace(":", "h")
+        "date" : "Vendredi 24 Mars",
+        "time" : "12h40"
     }
     
     return jsonify(result)
